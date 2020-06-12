@@ -8,12 +8,16 @@ import './display.css'
 const Display = ({author, quote}) => {
     return(
         <div className="display_box">
-            <p className="display_text">
-                {quote}
-            </p>
-            <p>
-                -{author}
-            </p>
+            <div className="display_text">
+                <p>{quote}</p>
+            </div>
+            <div className="author_text_box">
+                <p className="author_text">-{author}</p>
+            </div>
+            <div className="display_footer">
+                <div className="display_button"></div>
+                <div className="display_button"></div>
+            </div>
         </div>
     )
 }
