@@ -53,9 +53,22 @@
     align-items: center;
     position: absolute;
     bottom: 0;
-    border: 1px solid red;
     height: 4em;
     width: 5em;   
+}
+
+#up {
+   border-radius: 20px;
+   background: linear-gradient(145deg, #252e2e, #202727);
+   box-shadow:  13px 13px 23px #191f1f, 
+             -13px -13px 23px #2d3737; 
+}
+
+#down {
+    border-radius: 20px;
+    background: linear-gradient(145deg, #202727, #252e2e);
+    box-shadow:  13px 13px 23px #191f1f, 
+             -13px -13px 23px #2d3737;
 }
 
 .copy_button {
