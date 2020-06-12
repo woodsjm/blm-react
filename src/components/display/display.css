@@ -1,15 +1,9 @@
 
-p {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .display_box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    /*border: 1px solid yellow;*/
     border-radius: 64px;
     background: #232b2b;
     box-shadow: 13px 13px 28px #191f1f, 
@@ -28,16 +22,13 @@ p {
     margin-right: auto;
     width: 80%;
     height: 40%;
-    /*border: 1px solid red;*/
     padding: 1em 1em 0em 1em;
     font-family: 'Exo', sans-serif;
 }
 
 .author_text_box {
-    /*margin-top: -5px;*/
     height:15%;
     width: 80%;
-    /*border: 1px solid green;*/
 }
 
 .author_text {
@@ -46,8 +37,6 @@ p {
 }
 
 .display_footer {
-    /*border: 1px solid blue;*/
-    /*align-self: flex-end;*/
     min-height: 35%;
     min-width: 100%;
     margin-left: auto;
@@ -65,7 +54,6 @@ p {
         box-shadow: 13px 13px 28px #191f1f, 
                     -13px -13px 28px #2d3737;            
         max-width: 90%;
-
         height: 24em;
         font-size: 1em;
         margin: 0 auto;
@@ -77,7 +65,6 @@ p {
     }
 
     .display_footer {
-        /*border: 1px solid blue;*/
         height: 3em;
         width: 90%;
         margin-left: auto;
