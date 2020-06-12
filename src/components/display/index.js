@@ -1,11 +1,9 @@
 import React from 'react'
 
-import quotes from 'assets/quotes.js'
-
 import './display.css'
 
 
-const Display = ({author, getQuote, quote}) => {
+const Display = ({author, getQuote, copyQuote, quote}) => {
     return(
         <div className="display_box">
             <div className="display_text">
@@ -17,7 +15,7 @@ const Display = ({author, getQuote, quote}) => {
             <div className="display_footer">
                 <div 
                     className="display_button copy_button"
-                    onClick={() => getQuote()}
+                    onClick={() => copyQuote()}
                 >
                     Copy
                 </div>
