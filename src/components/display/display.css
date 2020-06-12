@@ -37,6 +37,9 @@
 }
 
 .display_footer {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
     min-height: 35%;
     min-width: 100%;
     margin-left: auto;
@@ -44,8 +47,26 @@
 }
 
 .display_button {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid red;
+    height: 4em;
+    width: 5em;   
 }
+
+.copy_button {
+    margin-left: 1em;
+    left: 0;
+}
+
+.quote_button {
+    margin-right: 1em;
+    right: 0;
+}
+
 
 @media screen and (min-width: 320px) {
     .display_box {

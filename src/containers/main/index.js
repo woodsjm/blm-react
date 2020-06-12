@@ -10,15 +10,33 @@ class Main extends React.Component {
     constructor() {
         super()
         this.state = {
-            message: "Main Page"
+            author: null,
+            quote: null
         }
     }
-    render() {
+
+    componentDidMount() {
+        this.getNewQuote()
+    }
+
+    getNewQuote = () => {
         const { author, quote } = generateQuote()
+        this.setState(state => ({
+            author: author,
+            quote: quote
+        }))
+    }
+
+    render() {
+        const { author, quote } = this.state 
         return(
             <section className="main_container">
                 <header className="main_text">
-                    <Display author={author} quote={quote} />
+                    <Display 
+                        author={author} 
+                        getQuote={this.getNewQuote}
+                        quote={quote} 
+                    />
                 </header>
             </section>
         )
