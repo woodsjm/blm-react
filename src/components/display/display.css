@@ -24,6 +24,7 @@
     height: 40%;
     padding: 1em 1em 0em 1em;
     font-family: 'Exo', sans-serif;
+    text-align: justify;
 }
 
 .author_text_box {
