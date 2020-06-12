@@ -6,10 +6,6 @@ import './display.css'
 
 
 const Display = ({author, quote}) => {
-    // const randInt   = Math.floor(Math.random() * 6)
-    // const selection = quotes[randInt]
-    // const quote     = selection.text
-    // const author    = selection.name
     return(
         <div className="display_box">
             <p className="display_text">

@@ -5,6 +5,7 @@ import generateQuote from 'utils/generators.js'
 
 import './main.css'
 
+
 class Main extends React.Component {
     constructor() {
         super()
@@ -12,7 +13,6 @@ class Main extends React.Component {
             message: "Main Page"
         }
     }
-
     render() {
         const { author, quote } = generateQuote()
         return(

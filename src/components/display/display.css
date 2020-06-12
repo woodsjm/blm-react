@@ -3,7 +3,7 @@
     border-radius: 64px;
     background: #232b2b;
     box-shadow: 13px 13px 28px #191f1f, 
-                -13px -13px 28px #2d3737;
+                -13px -13px 28px #2d3737;            
     max-width: 24em;
     height: 12em;
     font-size: 8em;
@@ -13,14 +13,6 @@
 
 .display_text {
     display: block;
-    padding-top: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em 1em 0em 1em;
     font-family: 'Exo', sans-serif;
-}
-
-@media screen and (min-width: 320px) {
-    .display_box {
-        width: 80%;
-    }
 }
