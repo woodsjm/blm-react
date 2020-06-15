@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Display from 'components/display'
-import generateQuote from 'utils/generators.js'
+import selectQuote from 'utils/generators.js'
 
 import './main.css'
 
@@ -16,7 +16,7 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        this.getNewQuote()
+        this.getQuote()
     }
 
     handleCopy = async () => {
@@ -32,8 +32,8 @@ class Main extends React.Component {
         }
     }
 
-    getNewQuote = () => {
-        const { author, quote } = generateQuote()
+    getQuote = () => {
+        const { author, quote } = selectQuote()
         this.setState(state => ({
             author: author,
             quote: quote
@@ -47,7 +47,7 @@ class Main extends React.Component {
                 <header className="main_text">
                     <Display 
                         author={author} 
-                        getQuote={this.getNewQuote}
+                        getQuote={this.getQuote}
                         copyQuote={this.handleCopy}
                         quote={quote} 
                     />

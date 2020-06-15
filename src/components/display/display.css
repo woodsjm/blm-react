@@ -60,12 +60,18 @@
 }
 
 #up {
-   border-radius: 15px;
-   background: #434351;
-   box-shadow:  6px 6px 8px #383843, 
+    border-radius: 15px;
+    background: #434351;
+    box-shadow:  6px 6px 8px #383843, 
              -6px -6px 8px #4e4e5f;
-   transition: all 3s ease-in-out;
+    transition: box-shadow 1s linear, box-shadow 1s linear;
 }
+
+/*#up::after {
+   box-shadow: inset 6px 6px 8px #383843, 
+            inset -6px -6px 8px #4e4e5f;
+   transition: box-shadow 1s linear, box-shadow 1s linear;
+}*/
 
 #down {
     border-radius: 15px;
