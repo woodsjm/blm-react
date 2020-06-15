@@ -32,8 +32,7 @@ class Main extends React.Component {
     }
 
     getNewQuote = () => {
-        const chosenQuote = fetchQuote()
-        const [txt, auth] = chosenQuote
+        const [txt, auth] = fetchQuote()
         this.setState(state => ({
             author: auth,
             quote: txt
