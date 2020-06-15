@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Display from 'components/display'
-import selectQuote from 'utils/generators.js'
+import selectQuote from 'helpers/quoteHelpers.js'
 
 import './main.css'
 
@@ -16,24 +16,24 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        this.getQuote()
+        this.getNewQuote()
     }
 
-    handleCopy = async () => {
-        const text = this.state.quote
-        if (!navigator.clipboard) {
-            return
-        }
-
+    copyQuote = async () => {
+        const clipboard = navigator.clipboard
+        const curQuote  = this.state.quote
+        if (!clipboard) { return }
+        
         try {
-            await navigator.clipboard.writeText(text);
-        } catch (error) {
-            console.error("Copy failed", error);
+            await clipboard.writeText(curQuote)
+        } catch (err) {
+            console.error("Copy Failed", err)
         }
     }
 
-    getQuote = () => {
-        const { author, quote } = selectQuote()
+    getNewQuote = () => {
+        const selection = selectQuote()
+        const { author, quote } = selection
         this.setState(state => ({
             author: author,
             quote: quote
@@ -46,10 +46,10 @@ class Main extends React.Component {
             <section className="main_container">
                 <header className="main_text">
                     <Display 
+                        copyQuote={this.copyQuote}
+                        getNewQuote={this.getNewQuote}
                         author={author} 
-                        getQuote={this.getQuote}
-                        copyQuote={this.handleCopy}
-                        quote={quote} 
+                        quote={quote}       
                     />
                 </header>
             </section>

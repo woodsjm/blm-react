@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import './display.css'
 
 
-const Display = ({author, getQuote, copyQuote, quote}) => {
-    const [copyDown, setCopyID]  = useState(false)
-    const [isDown, setQuoteID]   = useState(false)
-
+const Display = ({author, getNewQuote, copyQuote, quote}) => {
+    const [isCopyPressed, setCopyID] = useState(false)
+    const [isNewPressed, setQuoteID] = useState(false)
+    // const copyButtonText  = 'Copy'
+    // const quoteButtonText = 'New'
     return(
         <div className="display_box">
             <div className="display_text">
@@ -16,25 +17,19 @@ const Display = ({author, getQuote, copyQuote, quote}) => {
                 <p className="author_text">-{author}</p>
             </div>
             <div className="display_footer">
-                <div 
-                    className="display_button copy_button"
-                    id={copyDown ? 'down' : 'up'}
-                    onClick={() => {
-                            copyQuote()
-                            setCopyID(!copyDown)
-                        }
-                    }
+                <div className="display_button copy_button"
+                     id={isCopyPressed ? 'down' : 'up'}
+                     onClick={() => {
+                         copyQuote()
+                         setCopyID(!isCopyPressed)}}
                 >
                     Copy
                 </div>
-                <div 
-                    className="display_button quote_button"
-                    id={isDown ? 'down' : 'up'}
-                    onClick={() => {
-                            getQuote() 
-                            setQuoteID(!isDown)
-                        }
-                    }
+                <div className="display_button quote_button"
+                     id={isNewPressed ? 'down' : 'up'}
+                     onClick={() => {
+                         getNewQuote() 
+                         setQuoteID(!isNewPressed)}}
                 >
                     New
                 </div>
