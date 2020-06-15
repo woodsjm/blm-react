@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Display from 'components/display'
-import selectQuote from 'helpers/quoteHelpers.js'
+import Display     from 'components/display'
+import fetchQuote  from 'helpers/quoteHelpers.js'
 
 import './main.css'
 
@@ -21,27 +21,27 @@ class Main extends React.Component {
 
     copyQuote = async () => {
         const clipboard = navigator.clipboard
-        const curQuote  = this.state.quote
-        if (!clipboard) { return }
-        
+        const quoteTxt  = this.state.quote
+        if (!clipboard) {return}
         try {
-            await clipboard.writeText(curQuote)
-        } catch (err) {
+            await clipboard.writeText(quoteTxt)
+        } 
+        catch (err) {
             console.error("Copy Failed", err)
         }
     }
 
     getNewQuote = () => {
-        const selection = selectQuote()
-        const { author, quote } = selection
+        const chosenQuote = fetchQuote()
+        const [txt, auth] = chosenQuote
         this.setState(state => ({
-            author: author,
-            quote: quote
+            author: auth,
+            quote: txt
         }))
     }
 
     render() {
-        const { author, quote } = this.state 
+        const {author, quote} = this.state 
         return(
             <section className="main_container">
                 <header className="main_text">
