@@ -5,20 +5,20 @@ const cache = {
 }
 
 const genNewKey = () => {
-    const qty   = Object.keys(quotes).length
-    let newKey  = Math.floor(Math.random() * qty)
-    let curKey  = cache.curKey
-    while(newKey === curKey){
-        newKey  = Math.floor(Math.random() * qty)
+    const qty  = Object.keys(quotes).length
+    let newKey = Math.floor(Math.random() * qty)
+    while(newKey === cache.curKey){
+        newKey = Math.floor(Math.random() * qty)
     }
-    curKey = newKey
-    return newKey
+    cache.curKey = newKey
+    return cache.curKey
 }
 
 const selectQuote = (key) => {
-    const choice    = quotes[key]
-    const quoteText = choice.text
-    const quoteAuth = choice.name
+    console.log(key)
+    const quote     = quotes[key]
+    const quoteAuth = quote.name
+    const quoteText = quote.text
     return [quoteText, quoteAuth]
 }
 
