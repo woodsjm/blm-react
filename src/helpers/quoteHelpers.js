@@ -15,7 +15,6 @@ const genNewKey = () => {
 }
 
 const selectQuote = (key) => {
-    console.log(key)
     const quote     = quotes[key]
     const quoteAuth = quote.name
     const quoteText = quote.text
